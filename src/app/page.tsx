@@ -8,8 +8,7 @@ export default function HomePage() {
       <Header />
       <main id="content">
         <section className="hero">
-          <div className="wrap hero-grid">
-            <Image className="mark" src="/logo-mark.png" alt="" width={586} height={361} priority />
+          <div className="hero-grid">
             <div className="hero-copy">
               <p className="kicker">A personal trainer in the phone</p>
               <h1>
@@ -32,21 +31,31 @@ export default function HomePage() {
                 <span aria-hidden="true">·</span>
                 <span>Grow</span>
               </p>
+              <ol className="hero-rest">
+                <li>
+                  <span>02</span>
+                  How should I do it?
+                </li>
+                <li>
+                  <span>03</span>
+                  What should I eat?
+                </li>
+                <li>
+                  <span>04</span>
+                  Am I making progress?
+                </li>
+              </ol>
             </div>
-            <ol className="hero-rest">
-              <li>
-                <span>02</span>
-                How should I do it?
-              </li>
-              <li>
-                <span>03</span>
-                What should I eat?
-              </li>
-              <li>
-                <span>04</span>
-                Am I making progress?
-              </li>
-            </ol>
+            <figure className="hero-photo frame">
+              <Image
+                src="/photos/hero-squat.jpg"
+                alt="A goblet squat under a lime gym light"
+                fill
+                priority
+                sizes="(min-width: 960px) 46vw, 100vw"
+              />
+              <figcaption>01 · Goblet squat</figcaption>
+            </figure>
           </div>
         </section>
 
@@ -86,25 +95,36 @@ export default function HomePage() {
               ))}
             </ol>
             <div className="monday-layout">
-              <ol className="ledger">
-                {monday.map((move, index) => (
-                  <li key={move.name}>
-                    <span className="n">{String(index + 1).padStart(2, "0")}</span>
-                    <span>{move.name}</span>
-                    <span className="dose">{move.dose}</span>
-                  </li>
-                ))}
-              </ol>
-              <div className="aside">
-                <p>
-                  Beginner full body, session A. Yours is picked from your goal, your experience,
-                  the days you train, and whether that happens in a gym or at home.
-                </p>
-                <p>
-                  Each exercise can show a demo, the muscles it uses, and the mistake people make.
-                  The workout is saved on the phone, so a bad gym signal does not end the session.
-                </p>
+              <div>
+                <ol className="ledger">
+                  {monday.map((move, index) => (
+                    <li key={move.name}>
+                      <span className="n">{String(index + 1).padStart(2, "0")}</span>
+                      <span>{move.name}</span>
+                      <span className="dose">{move.dose}</span>
+                    </li>
+                  ))}
+                </ol>
+                <div className="aside">
+                  <p>
+                    Beginner full body, session A. Yours is picked from your goal, your experience,
+                    the days you train, and whether that happens in a gym or at home.
+                  </p>
+                  <p>
+                    Each exercise can show a demo, the muscles it uses, and the mistake people make.
+                    The workout is saved on the phone, so a bad gym signal does not end the session.
+                  </p>
+                </div>
               </div>
+              <figure className="session-shot frame">
+                <Image
+                  src="/photos/bench-press.jpg"
+                  alt="Barbell bench press on a flat bench"
+                  fill
+                  sizes="(min-width: 800px) 40vw, 100vw"
+                />
+                <figcaption>02 · Bench press</figcaption>
+              </figure>
             </div>
           </div>
         </section>
@@ -121,6 +141,7 @@ export default function HomePage() {
                   <span className="n">{job.n}</span>
                   <h3>{job.title}</h3>
                   <p>{job.body}</p>
+                  <Image className="job-shot" src={job.image} alt={job.alt} width={640} height={480} />
                 </li>
               ))}
             </ol>
@@ -136,6 +157,7 @@ export default function HomePage() {
             <div className="menu">
               {plates.map((plate) => (
                 <article key={plate.place}>
+                  <Image src={plate.image} alt={plate.alt} width={1152} height={864} />
                   <h3>{plate.place}</h3>
                   <p className="foods">{plate.foods}</p>
                   <p className="note">{plate.note}</p>
@@ -170,6 +192,19 @@ export default function HomePage() {
           </div>
         </section>
 
+        <figure className="home-break frame">
+          <Image
+            src="/photos/home-pushup.jpg"
+            alt="A push-up on a wooden floor, with a lamp in the room behind"
+            fill
+            sizes="100vw"
+          />
+          <figcaption>
+            <span>Home or the gym</span>
+            The floor counts.
+          </figcaption>
+        </figure>
+
         <section id="rules" aria-labelledby="rules-title">
           <div className="wrap">
             <div className="section-head">
@@ -192,14 +227,27 @@ export default function HomePage() {
             <div>
               <p className="kicker">iPhone and Android</p>
               <h2>Take it to the gym.</h2>
-            </div>
-            <div>
               <p>
                 The apps are not in the stores yet. These buttons open Apple and Google until the
                 Casual Fit listings are up.
               </p>
               <StoreLinks />
             </div>
+            <div className="phone" aria-hidden="true">
+                <div className="phone-screen">
+                  <p className="phone-kicker">Monday</p>
+                  <p className="phone-title">Full body A</p>
+                  <p className="phone-sub">Beginner</p>
+                  <ul>
+                    {monday.map((move) => (
+                      <li key={move.name}>
+                        <span>{move.name}</span>
+                        <span>{move.dose}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
           </div>
         </section>
       </main>

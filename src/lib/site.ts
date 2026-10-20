@@ -4,8 +4,8 @@
  */
 export const site = {
   name: "Casual Fit",
-  url: "https://casualfit.app",
-  email: "support@casualfit.app",
+  url: "https://casualfit.ng",
+  email: "support@casualfit.ng",
   updated: "18 October 2026",
   description:
     "Casual Fit is a personal trainer in your phone. It tells you the workout, how to do it, what to eat, and whether you are making progress.",
@@ -64,21 +64,29 @@ export const jobs = [
     n: "01",
     title: "Train",
     body: "The session is already chosen. You get the exercise, the sets, the reps, the rest, and a demo. If a machine is taken, you swap it for an alternative we already have.",
+    image: "/photos/bench-press.jpg",
+    alt: "A barbell bench press in a dark gym",
   },
   {
     n: "02",
     title: "Eat",
     body: "Log the food you actually cook. Nigerian, British, and international plates sit in the same list. Calories and macros are labelled estimated or verified. We do not invent a precise number.",
+    image: "/photos/plate-roast.jpg",
+    alt: "Roast chicken, potatoes, and green beans",
   },
   {
     n: "03",
     title: "Track",
     body: "Weight, workouts finished, and time trained. The streak stays intact on a planned rest day. Sunday is rest unless you say otherwise.",
+    image: "/photos/track-hands.jpg",
+    alt: "Chalked hands on a barbell",
   },
   {
     n: "04",
     title: "Grow",
     body: "The plan comes from your goal, your experience, your days, and whether you train in a gym, at home, or both. You can change the week.",
+    image: "/photos/home-pushup.jpg",
+    alt: "A push-up on a living room floor",
   },
 ] as const;
 
@@ -87,16 +95,22 @@ export const plates = [
     place: "Nigerian",
     foods: "Jollof, beans, plantain, swallow.",
     note: "Counted. Not talked down to.",
+    image: "/photos/plate-jollof.jpg",
+    alt: "Jollof rice, plantain, and grilled chicken",
   },
   {
     place: "British",
-    foods: "Porridge, a roast, beans on toast.",
+    foods: "A roast, potatoes, beans.",
     note: "The ordinary plate, written down.",
+    image: "/photos/plate-roast.jpg",
+    alt: "Roast chicken, potatoes, and green beans",
   },
   {
     place: "International",
     foods: "Whatever else is actually on the plate.",
     note: "Same ledger. Same portions.",
+    image: "/photos/plate-fish.jpg",
+    alt: "Grilled fish, rice, and roasted vegetables",
   },
 ] as const;
 
